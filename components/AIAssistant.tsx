@@ -1,6 +1,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { getAssistantResponse } from '../services/geminiService.ts';
+// Import correct GoogleGenAI client from SDK
+import { GoogleGenAI } from "@google/genai";
 import { ChatMessage } from '../types.ts';
 
 const AIAssistant: React.FC = () => {
@@ -18,6 +19,7 @@ const AIAssistant: React.FC = () => {
     }
   }, [messages]);
 
+  // Fix: Integrated direct Gemini API calls following @google/genai guidelines
   const handleSend = async () => {
     if (!input.trim() || isLoading) return;
 
@@ -26,14 +28,35 @@ const AIAssistant: React.FC = () => {
     setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
     setIsLoading(true);
 
-    const history = messages.map(m => ({ 
-      role: m.role, 
-      parts: [{ text: m.text }] 
-    }));
+    try {
+      // Create a fresh instance for each request as per guidelines
+      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      
+      // We slice(1) to skip the initial model-only greeting, as Gemini API 
+      // expects a conversation to begin with a 'user' turn.
+      const history = messages.slice(1).map(m => ({ 
+        role: m.role, 
+        parts: [{ text: m.text }] 
+      }));
 
-    const response = await getAssistantResponse(userMsg, history);
-    setMessages(prev => [...prev, { role: 'model', text: response || '' }]);
-    setIsLoading(false);
+      // Use gemini-3-flash-preview for general Q&A text tasks
+      const response = await ai.models.generateContent({
+        model: 'gemini-3-flash-preview',
+        contents: [...history, { role: 'user', parts: [{ text: userMsg }] }],
+        config: {
+          systemInstruction: "You are a helpful and encouraging academic assistant for Shalaka.io, a study hub curated by Shalaka Kashikar. You help students find resources for English 9th-12th Standard and use educational apps like Smartest (testing), English Playground (interactive activities), SVA Mastery, Crowsword (vocabulary), and Twistopia (speech). Be concise and educational.",
+        },
+      });
+
+      // Access the .text property directly (do not call as a function)
+      const botResponse = response.text || "I'm sorry, I'm having trouble processing that right now.";
+      setMessages(prev => [...prev, { role: 'model', text: botResponse }]);
+    } catch (error) {
+      console.error("AI Assistant Error:", error);
+      setMessages(prev => [...prev, { role: 'model', text: "I encountered an error while searching for an answer. Please try again later." }]);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

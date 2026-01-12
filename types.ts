@@ -1,10 +1,9 @@
-
 export enum Category {
-  GRAMMAR = 'Grammar',
-  LITERATURE = 'Literature',
-  TESTING = 'Testing',
-  LANGUAGES = 'Languages',
-  GENERAL = 'General'
+  APPS = 'Apps',
+  STD_9 = '9th Std English Resources',
+  STD_10 = '10th Std English Resources',
+  STD_11 = '11th Std English Resources',
+  STD_12 = '12th Std English Resources'
 }
 
 export interface AcademicApp {
@@ -17,6 +16,7 @@ export interface AcademicApp {
   tags: string[];
 }
 
+// Added missing interface used by AIAssistant
 export interface ChatMessage {
   role: 'user' | 'model';
   text: string;
