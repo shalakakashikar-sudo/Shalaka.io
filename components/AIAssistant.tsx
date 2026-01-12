@@ -1,12 +1,12 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { getAssistantResponse } from '../services/geminiService';
-import { ChatMessage } from '../types';
+import { getAssistantResponse } from '../services/geminiService.ts';
+import { ChatMessage } from '../types.ts';
 
 const AIAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { role: 'model', text: 'Hello! I am your Academic Companion. How can I help you navigate Shalaka\'s academic applications today?' }
+    { role: 'model', text: 'Hello! I am your Academic Companion. How can I help you navigate Shalaka.io\'s academic applications today?' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);

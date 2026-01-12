@@ -1,9 +1,8 @@
 
 import React, { useState, useMemo } from 'react';
-import ProjectCard from './components/ProjectCard';
-import AIAssistant from './components/AIAssistant';
-import { ACADEMIC_APPS } from './constants';
-import { Category } from './types';
+import ProjectCard from './components/ProjectCard.tsx';
+import { ACADEMIC_APPS } from './constants.tsx';
+import { Category } from './types.ts';
 
 const App: React.FC = () => {
   const [filter, setFilter] = useState<Category | 'All'>('All');
@@ -21,13 +20,11 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col selection:bg-pink-100 selection:text-pink-900">
-      {/* Decorative Background Elements */}
       <div className="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] left-[-5%] w-[50%] h-[50%] bg-pink-50 rounded-full blur-[120px] opacity-70"></div>
         <div className="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] bg-orange-50 rounded-full blur-[120px] opacity-70"></div>
       </div>
 
-      {/* Navigation */}
       <header className="sticky top-0 z-40 glass border-b border-pink-100/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -49,7 +46,6 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
       <section className="pt-32 pb-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white shadow-xl shadow-pink-50 border border-pink-50 text-[10px] font-black text-pink-500 mb-10 tracking-[0.2em] uppercase animate-bounce-slow">
@@ -76,10 +72,8 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Applications Section */}
       <main id="apps" className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32 w-full">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-16">
-          {/* Filters */}
           <div className="flex flex-wrap items-center gap-3">
             {(['All', ...Object.values(Category)] as const).map(cat => (
               <button
@@ -96,7 +90,6 @@ const App: React.FC = () => {
             ))}
           </div>
 
-          {/* Search */}
           <div className="relative w-full lg:w-96 group">
             <input 
               type="text"
@@ -132,7 +125,6 @@ const App: React.FC = () => {
         )}
       </main>
 
-      {/* Footer */}
       <footer className="bg-white border-t border-pink-50 pt-24 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
@@ -186,9 +178,6 @@ const App: React.FC = () => {
           </div>
         </div>
       </footer>
-
-      {/* AI Sidekick */}
-      <AIAssistant />
     </div>
   );
 };

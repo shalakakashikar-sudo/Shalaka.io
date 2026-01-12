@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { AcademicApp, Category } from '../types';
+import { AcademicApp, Category } from '../types.ts';
 
 interface ProjectCardProps {
   app: AcademicApp;
@@ -36,13 +36,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ app }) => {
         <p className="text-slate-600 text-sm leading-relaxed">
           {app.description}
         </p>
-        
-        <div className="p-3 bg-slate-50 rounded-xl border border-slate-100/50 group-hover:bg-pink-50/30 transition-colors">
-          <p className="text-[10px] text-slate-400 font-bold uppercase mb-1 tracking-widest">Target URL</p>
-          <p className="text-xs font-medium text-pink-500 break-all opacity-80 group-hover:opacity-100">
-            {app.url}
-          </p>
-        </div>
       </div>
 
       <div className="flex flex-wrap gap-2 my-6">

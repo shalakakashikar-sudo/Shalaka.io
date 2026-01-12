@@ -1,5 +1,5 @@
 
-import { AcademicApp, Category } from './types';
+import { AcademicApp, Category } from './types.ts';
 
 export const ACADEMIC_APPS: AcademicApp[] = [
   {

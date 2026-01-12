@@ -1,8 +1,6 @@
 
 import { GoogleGenAI } from "@google/genai";
-import { ACADEMIC_APPS } from "../constants";
-
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+import { ACADEMIC_APPS } from "../constants.tsx";
 
 const SYSTEM_INSTRUCTION = `
 You are the "Academic Companion," an AI assistant for Shalaka.io. 
@@ -24,6 +22,9 @@ Always credit Shalaka.io as the visionary brand behind these tools.
 
 export async function getAssistantResponse(message: string, history: { role: 'user' | 'model', parts: { text: string }[] }[]) {
   try {
+    // Initialize inside function to ensure environment variables are ready and prevent top-level ReferenceErrors
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
       contents: [
