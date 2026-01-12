@@ -1,9 +1,17 @@
 import { AcademicApp, Category } from './types.ts';
 
+/**
+ * HOW TO USE GOOGLE DRIVE RESOURCES:
+ * 1. Upload your file (PDF, Docs, etc.) or folder to Google Drive.
+ * 2. Right-click the file/folder -> Share -> Change access to "Anyone with the link".
+ * 3. Copy the link and paste it into the 'url' field below.
+ * 4. To force a direct preview of a file, replace '/view?usp=sharing' with '/preview' in your URL.
+ */
+
 export const ACADEMIC_APPS: AcademicApp[] = [
   {
     id: 'smartest',
-    title: 'Smartest',
+    title: 'SmarTest',
     description: 'A specialized testing platform providing deep, evaluation-based feedback for students.',
     url: 'https://smartest-sk.vercel.app/',
     category: Category.APPS,
@@ -48,7 +56,7 @@ export const ACADEMIC_APPS: AcademicApp[] = [
   },
   {
     id: 'conditionals',
-    title: 'Conditional Clauses',
+    title: 'Conditionals',
     description: 'Study and practice "if-then" logic and complex conditional sentence structures.',
     url: 'https://conditionals-sk.vercel.app/',
     category: Category.APPS,
@@ -104,7 +112,7 @@ export const ACADEMIC_APPS: AcademicApp[] = [
     id: 'res-10',
     title: '10th Std English Mastery',
     description: 'Board exam preparation material, literature summaries, and model question guides.',
-    url: '#',
+    url: 'https://drive.google.com/drive/folders/119s1fMCl-0A3Rg_Ei80Pock8BPnz1iCi?usp=sharing',
     category: Category.STD_10,
     icon: '🥇',
     tags: []

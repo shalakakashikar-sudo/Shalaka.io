@@ -1,3 +1,4 @@
+
 export enum Category {
   APPS = 'Apps',
   STD_9 = '9th Std English Resources',
@@ -16,7 +17,7 @@ export interface AcademicApp {
   tags: string[];
 }
 
-// Added missing interface used by AIAssistant
+// Added ChatMessage interface used by the AIAssistant component
 export interface ChatMessage {
   role: 'user' | 'model';
   text: string;

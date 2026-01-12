@@ -1,6 +1,4 @@
-
 import React, { useState, useRef, useEffect } from 'react';
-// Import correct GoogleGenAI client from SDK
 import { GoogleGenAI } from "@google/genai";
 import { ChatMessage } from '../types.ts';
 
@@ -11,15 +9,42 @@ const AIAssistant: React.FC = () => {
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  
   const scrollRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
+  // Auto-scroll to bottom on new messages
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages]);
 
-  // Fix: Integrated direct Gemini API calls following @google/genai guidelines
+  // Handle click outside and Escape key to close
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    const handleEscKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('keydown', handleEscKey);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEscKey);
+    };
+  }, [isOpen]);
+
   const handleSend = async () => {
     if (!input.trim() || isLoading) return;
 
@@ -29,17 +54,12 @@ const AIAssistant: React.FC = () => {
     setIsLoading(true);
 
     try {
-      // Create a fresh instance for each request as per guidelines
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-      
-      // We slice(1) to skip the initial model-only greeting, as Gemini API 
-      // expects a conversation to begin with a 'user' turn.
       const history = messages.slice(1).map(m => ({ 
         role: m.role, 
         parts: [{ text: m.text }] 
       }));
 
-      // Use gemini-3-flash-preview for general Q&A text tasks
       const response = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: [...history, { role: 'user', parts: [{ text: userMsg }] }],
@@ -48,7 +68,6 @@ const AIAssistant: React.FC = () => {
         },
       });
 
-      // Access the .text property directly (do not call as a function)
       const botResponse = response.text || "I'm sorry, I'm having trouble processing that right now.";
       setMessages(prev => [...prev, { role: 'model', text: botResponse }]);
     } catch (error) {
@@ -60,7 +79,7 @@ const AIAssistant: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-8 right-8 z-50">
+    <div className="fixed bottom-8 right-8 z-50" ref={containerRef}>
       {isOpen ? (
         <div className="glass w-80 sm:w-96 h-[550px] flex flex-col rounded-[2.5rem] shadow-2xl shadow-pink-200/50 overflow-hidden animate-in slide-in-from-bottom-4 duration-300 border border-white">
           <div className="bg-gradient-to-r from-pink-500 to-orange-500 p-6 flex justify-between items-center text-white">
@@ -71,7 +90,7 @@ const AIAssistant: React.FC = () => {
                 <span className="text-[10px] font-bold opacity-70 uppercase tracking-widest">Always Online</span>
               </div>
             </div>
-            <button onClick={() => setIsOpen(false)} className="hover:bg-white/20 p-2 rounded-xl transition-colors">
+            <button onClick={() => setIsOpen(false)} className="hover:bg-white/20 p-2 rounded-xl transition-colors" aria-label="Close assistant">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
@@ -128,6 +147,7 @@ const AIAssistant: React.FC = () => {
         <button 
           onClick={() => setIsOpen(true)}
           className="bg-gradient-to-br from-pink-500 to-orange-500 text-white w-16 h-16 rounded-[1.5rem] flex items-center justify-center shadow-2xl shadow-pink-400/40 hover:scale-110 active:scale-90 transition-all duration-300 group"
+          aria-label="Open AI assistant"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 group-hover:rotate-12 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />

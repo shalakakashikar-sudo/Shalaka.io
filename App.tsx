@@ -1,5 +1,8 @@
+
 import React, { useState, useMemo } from 'react';
 import ProjectCard from './components/ProjectCard.tsx';
+// Added AIAssistant import to make the feature accessible
+import AIAssistant from './components/AIAssistant.tsx';
 import { ACADEMIC_APPS } from './constants.tsx';
 import { Category } from './types.ts';
 
@@ -104,6 +107,9 @@ const App: React.FC = () => {
             </p>
         </div>
       </footer>
+
+      {/* Render AIAssistant component */}
+      <AIAssistant />
     </div>
   );
 };
