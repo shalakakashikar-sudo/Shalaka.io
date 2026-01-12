@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shalaka.io - Academic Hub</title>
+    
+    <!-- SEO & Meta Tags -->
+    <meta name="description" content="A curated suite of elite academic tools by Shalaka.io. Master grammar, explore literature, and prepare for competitive exams with AI-powered insights.">
+    <meta name="keywords" content="Education, Grammar, Literature, Testing, AI Education, Shalaka.io, Academic Portfolio, English Playground">
+    <meta name="author" content="Shalaka.io">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shalaka-io.vercel.app/">
+    <meta property="og:title" content="Shalaka.io - Redefining the Digital Classroom">
+    <meta property="og:description" content="Master grammar, unlock literature, and dominate exams with Shalaka.io’s elite suite of academic tools.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&q=80&w=1200&h=630">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://shalaka-io.vercel.app/">
+    <meta property="twitter:title" content="Shalaka.io - Redefining the Digital Classroom">
+    <meta property="twitter:description" content="Master grammar, unlock literature, and dominate exams with Shalaka.io’s elite suite of academic tools.">
+    
+    <!-- Theme & Fonts -->
+    <meta name="theme-color" content="#f472b6">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fffafb;
+            color: #431407;
+        }
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 182, 193, 0.2);
+        }
+        
+        /* Pink-Orange Gradient Text Utility */
+        .text-gradient {
+            background: linear-gradient(90deg, #ec4899, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Hover animation for cards */
+        .card-shadow-hover:hover {
+            box-shadow: 0 20px 25px -5px rgba(244, 114, 182, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.1);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .float { animation: float 6s ease-in-out infinite; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fff5f7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #fbcfe8;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f472b6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.35.0"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
