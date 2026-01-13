@@ -1,23 +1,19 @@
 
 import React, { useState, useMemo } from 'react';
 import ProjectCard from './components/ProjectCard.tsx';
-// Added AIAssistant import to make the feature accessible
 import AIAssistant from './components/AIAssistant.tsx';
 import { ACADEMIC_APPS } from './constants.tsx';
-import { Category } from './types.ts';
 
 const App: React.FC = () => {
-  const [filter, setFilter] = useState<Category | 'All'>('All');
   const [searchTerm, setSearchTerm] = useState('');
 
   const filteredApps = useMemo(() => {
     return ACADEMIC_APPS.filter(app => {
-      const matchesFilter = filter === 'All' || app.category === filter;
       const matchesSearch = app.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
                             app.description.toLowerCase().includes(searchTerm.toLowerCase());
-      return matchesFilter && matchesSearch;
+      return matchesSearch;
     });
-  }, [filter, searchTerm]);
+  }, [searchTerm]);
 
   return (
     <div className="min-h-screen flex flex-col selection:bg-pink-100 selection:text-pink-900">
@@ -45,33 +41,19 @@ const App: React.FC = () => {
             The Digital <br/><span className="italic text-gradient">Study Hub.</span>
           </h1>
           <p className="text-xl sm:text-2xl text-slate-600 leading-relaxed mb-8 max-w-3xl mx-auto font-medium">
-            Access elite grammar tools, literary guides, and standard-specific study materials designed by <span className="text-gradient font-bold">Shalaka Kashikar</span>.
+            Access elite grammar tools, linguistic games, and educational apps designed by <span className="text-gradient font-bold">Shalaka Kashikar</span>.
           </p>
         </div>
       </section>
 
       <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32 w-full">
-        <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8 mb-16">
-          <div className="flex flex-wrap items-center gap-2">
-            {(['All', ...Object.values(Category)] as const).map(cat => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-4 py-2.5 rounded-xl text-[10px] font-black tracking-widest uppercase transition-all duration-300 ${
-                  filter === cat 
-                  ? 'bg-slate-900 text-white shadow-lg scale-105' 
-                  : 'bg-white text-slate-400 border border-pink-50 hover:border-pink-200 hover:text-pink-500'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          <div className="relative w-full lg:w-96">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-16">
+          <h2 className="text-2xl font-bold text-slate-800">Explore Interactive Apps</h2>
+          
+          <div className="relative w-full md:w-96">
             <input 
               type="text"
-              placeholder="Search apps or resources..."
+              placeholder="Search apps..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full bg-white border border-pink-50 rounded-2xl px-6 py-4 pl-14 text-sm font-medium focus:outline-none focus:ring-4 focus:ring-pink-500/10 focus:border-pink-500 transition-all shadow-lg shadow-pink-50/50"
@@ -90,8 +72,8 @@ const App: React.FC = () => {
           </div>
         ) : (
           <div className="py-32 text-center bg-white rounded-[3rem] border border-pink-50 shadow-xl shadow-pink-50/20">
-            <h3 className="text-3xl font-black text-slate-800 mb-4">No resources found</h3>
-            <p className="text-slate-400 font-medium">Try a different search or category.</p>
+            <h3 className="text-3xl font-black text-slate-800 mb-4">No apps found</h3>
+            <p className="text-slate-400 font-medium">Try a different search term.</p>
           </div>
         )}
       </main>
@@ -108,7 +90,6 @@ const App: React.FC = () => {
         </div>
       </footer>
 
-      {/* Render AIAssistant component */}
       <AIAssistant />
     </div>
   );

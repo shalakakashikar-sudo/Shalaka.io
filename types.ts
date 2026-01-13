@@ -1,10 +1,6 @@
 
 export enum Category {
-  APPS = 'Apps',
-  STD_9 = '9th Std English Resources',
-  STD_10 = '10th Std English Resources',
-  STD_11 = '11th Std English Resources',
-  STD_12 = '12th Std English Resources'
+  APPS = 'Apps'
 }
 
 export interface AcademicApp {
@@ -17,7 +13,6 @@ export interface AcademicApp {
   tags: string[];
 }
 
-// Added ChatMessage interface used by the AIAssistant component
 export interface ChatMessage {
   role: 'user' | 'model';
   text: string;

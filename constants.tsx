@@ -1,11 +1,9 @@
+
 import { AcademicApp, Category } from './types.ts';
 
 /**
- * HOW TO USE GOOGLE DRIVE RESOURCES:
- * 1. Upload your file (PDF, Docs, etc.) or folder to Google Drive.
- * 2. Right-click the file/folder -> Share -> Change access to "Anyone with the link".
- * 3. Copy the link and paste it into the 'url' field below.
- * 4. To force a direct preview of a file, replace '/view?usp=sharing' with '/preview' in your URL.
+ * ACADEMIC APPS DATA
+ * A curated collection of interactive educational tools.
  */
 
 export const ACADEMIC_APPS: AcademicApp[] = [
@@ -97,42 +95,6 @@ export const ACADEMIC_APPS: AcademicApp[] = [
     url: 'https://verb-academy.vercel.app/',
     category: Category.APPS,
     icon: '🏃',
-    tags: []
-  },
-  {
-    id: 'res-9',
-    title: '9th Std English Hub',
-    description: 'Comprehensive curriculum materials and grammar support for 9th Standard students.',
-    url: '#', 
-    category: Category.STD_9,
-    icon: '📒',
-    tags: []
-  },
-  {
-    id: 'res-10',
-    title: '10th Std English Mastery',
-    description: 'Board exam preparation material, literature summaries, and model question guides.',
-    url: 'https://drive.google.com/drive/folders/119s1fMCl-0A3Rg_Ei80Pock8BPnz1iCi?usp=sharing',
-    category: Category.STD_10,
-    icon: '🥇',
-    tags: []
-  },
-  {
-    id: 'res-11',
-    title: '11th Std English Advanced',
-    description: 'Deep-dive analysis for higher secondary English literature and complex syntax.',
-    url: '#',
-    category: Category.STD_11,
-    icon: '📗',
-    tags: []
-  },
-  {
-    id: 'res-12',
-    title: '12th Std English Finalist',
-    description: 'University entrance prep and high-level literary analysis for final year students.',
-    url: '#',
-    category: Category.STD_12,
-    icon: '🎓',
     tags: []
   }
 ];

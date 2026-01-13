@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { GoogleGenAI } from "@google/genai";
 import { ChatMessage } from '../types.ts';
@@ -5,7 +6,7 @@ import { ChatMessage } from '../types.ts';
 const AIAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { role: 'model', text: 'Hello! I am your Academic Companion. How can I help you navigate Shalaka.io\'s academic applications today?' }
+    { role: 'model', text: 'Hello! I am your Academic Companion. How can I help you navigate Shalaka.io\'s apps today?' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -13,14 +14,12 @@ const AIAssistant: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll to bottom on new messages
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages]);
 
-  // Handle click outside and Escape key to close
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
@@ -64,7 +63,7 @@ const AIAssistant: React.FC = () => {
         model: 'gemini-3-flash-preview',
         contents: [...history, { role: 'user', parts: [{ text: userMsg }] }],
         config: {
-          systemInstruction: "You are a helpful and encouraging academic assistant for Shalaka.io, a study hub curated by Shalaka Kashikar. You help students find resources for English 9th-12th Standard and use educational apps like Smartest (testing), English Playground (interactive activities), SVA Mastery, Crowsword (vocabulary), and Twistopia (speech). Be concise and educational.",
+          systemInstruction: "You are a helpful academic assistant for Shalaka.io, a hub of interactive educational apps curated by Shalaka Kashikar. You help users navigate apps like SmarTest (feedback/testing), English Playground (interactive activities), SVA Mastery, Crowsword (vocabulary), Twistopia (speech), Conditionals, Sentence Safari, Spanish Playground, Litmania, and Verb Academy. Be concise, encouraging, and focused only on these apps.",
         },
       });
 
@@ -72,7 +71,7 @@ const AIAssistant: React.FC = () => {
       setMessages(prev => [...prev, { role: 'model', text: botResponse }]);
     } catch (error) {
       console.error("AI Assistant Error:", error);
-      setMessages(prev => [...prev, { role: 'model', text: "I encountered an error while searching for an answer. Please try again later." }]);
+      setMessages(prev => [...prev, { role: 'model', text: "I encountered an error. Please try again later." }]);
     } finally {
       setIsLoading(false);
     }
@@ -128,7 +127,7 @@ const AIAssistant: React.FC = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                placeholder="Type your question..."
+                placeholder="Ask about our apps..."
                 className="flex-1 bg-pink-50/50 border border-pink-100 rounded-2xl px-5 py-3 text-sm font-medium focus:outline-none focus:ring-4 focus:ring-pink-500/10 focus:border-pink-500 transition-all placeholder:text-pink-300"
               />
               <button 
