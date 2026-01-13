@@ -8,6 +8,15 @@ import { AcademicApp, Category } from './types.ts';
 
 export const ACADEMIC_APPS: AcademicApp[] = [
   {
+    id: 'gnome-smash',
+    title: 'Gnome Smash',
+    description: 'An engaging game-based tool designed to sharpen reflexes and improve cognitive focus through interactive play.',
+    url: 'https://gnome-smash.vercel.app',
+    category: Category.APPS,
+    icon: '🍄',
+    tags: ['Game', 'Focus']
+  },
+  {
     id: 'smartest',
     title: 'SmarTest',
     description: 'A specialized testing platform providing deep, evaluation-based feedback for students.',
