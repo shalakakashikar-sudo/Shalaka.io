@@ -78,6 +78,9 @@ const App: React.FC = () => {
         )}
       </main>
 
+      {/* Adding the AI Assistant to the application */}
+      <AIAssistant />
+
       <footer className="bg-white border-t border-pink-50 pt-24 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="flex items-center justify-center gap-4 mb-8">
@@ -89,8 +92,6 @@ const App: React.FC = () => {
             </p>
         </div>
       </footer>
-
-      <AIAssistant />
     </div>
   );
 };

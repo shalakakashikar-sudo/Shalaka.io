@@ -13,6 +13,10 @@ export interface AcademicApp {
   tags: string[];
 }
 
+/**
+ * Interface representing a message in the AI assistant conversation.
+ * roles 'user' and 'model' are compatible with Google Gemini API requirements.
+ */
 export interface ChatMessage {
   role: 'user' | 'model';
   text: string;
