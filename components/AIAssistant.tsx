@@ -63,7 +63,7 @@ const AIAssistant: React.FC = () => {
         model: 'gemini-3-flash-preview',
         contents: [...history, { role: 'user', parts: [{ text: userMsg }] }],
         config: {
-          systemInstruction: "You are a helpful academic assistant for Shalaka.io, a hub of interactive educational apps curated by Shalaka Kashikar. You help users navigate apps like SmarTest (feedback/testing), English Playground (interactive activities), SVA Mastery, Crowsword (vocabulary), Twistopia (speech), Conditionals, Sentence Safari, Spanish Playground, Litmania, and Verb Academy. Be concise, encouraging, and focused only on these apps.",
+          systemInstruction: "You are a helpful academic assistant for Shalaka.io, a hub of interactive educational apps curated by Shalaka Kashikar. You help users navigate apps like Determiner Den (articles/quantifiers), Gnome Smash (cognitive focus), SmarTest (feedback/testing), English Playground (interactive activities), SVA Mastery, Crowsword (vocabulary), Twistopia (speech), Conditionals, Sentence Safari, Spanish Playground, Litmania, and Verb Academy. Be concise, encouraging, and focused only on these apps.",
         },
       });
 

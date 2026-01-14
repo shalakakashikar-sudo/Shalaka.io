@@ -8,6 +8,15 @@ import { AcademicApp, Category } from './types.ts';
 
 export const ACADEMIC_APPS: AcademicApp[] = [
   {
+    id: 'determiner-den',
+    title: 'Determiner Den',
+    description: 'Master the nuances of determiners, articles, and quantifiers through interactive challenges and linguistic quests.',
+    url: 'https://determiner-den.vercel.app/',
+    category: Category.APPS,
+    icon: '🏰',
+    tags: ['Grammar', 'Mastery']
+  },
+  {
     id: 'gnome-smash',
     title: 'Gnome Smash',
     description: 'An engaging game-based tool designed to sharpen reflexes and improve cognitive focus through interactive play.',
