@@ -1,6 +1,9 @@
 
 export enum Category {
-  APPS = 'Apps'
+  GRAMMAR = 'Grammar',
+  GAMES = 'Games',
+  LINGUISTICS = 'Linguistics',
+  TOOLS = 'Tools'
 }
 
 export interface AcademicApp {
@@ -11,11 +14,11 @@ export interface AcademicApp {
   category: Category;
   icon: string;
   tags: string[];
+  isFeatured?: boolean;
 }
 
 /**
  * Interface representing a message in the AI assistant conversation.
- * roles 'user' and 'model' are compatible with Google Gemini API requirements.
  */
 export interface ChatMessage {
   role: 'user' | 'model';
