@@ -6,7 +6,7 @@ import { ChatMessage } from '../types.ts';
 const AIAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { role: 'model', text: 'Hello! I am your Academic Companion. How can I help you navigate Shalaka.io\'s apps today?' }
+    { role: 'model', text: 'Hello! I am your Academic Companion. How can I help you explore Shalaka Kashikar\'s innovative apps today?' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -63,7 +63,7 @@ const AIAssistant: React.FC = () => {
         model: 'gemini-3-flash-preview',
         contents: [...history, { role: 'user', parts: [{ text: userMsg }] }],
         config: {
-          systemInstruction: "You are a helpful academic assistant for Shalaka.io, a hub of interactive educational apps curated by Shalaka Kashikar. You help users navigate apps like Modowl (English modals), Determiner Den (articles/quantifiers), Gnome Smash (cognitive focus), SmarTest (feedback/testing), English Playground (interactive activities), SVA Mastery, Crowsword (vocabulary), Twistopia (speech), Conditionals, Sentence Safari, Spanish Playground, Litmania, and Verb Academy. Be concise, encouraging, and focused only on these apps.",
+          systemInstruction: "You are a helpful academic assistant for Shalaka.io, a hub of interactive educational apps designed and developed by Shalaka Kashikar. You help users navigate apps like Modowl, Determiner Den, Gnome Smash, SmarTest, English Playground, SVA Mastery, Crowsword, Twistopia, Conditionals, Sentence Safari, Spanish Playground, Litmania, and Verb Academy. Always refer to Shalaka Kashikar as the visionary and creator of these tools. Be concise, encouraging, and focused.",
         },
       });
 
@@ -86,7 +86,7 @@ const AIAssistant: React.FC = () => {
               <div className="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-lg">🎓</div>
               <div>
                 <span className="font-black text-sm block tracking-wide">Assistant</span>
-                <span className="text-[10px] font-bold opacity-70 uppercase tracking-widest">Always Online</span>
+                <span className="text-[10px] font-bold opacity-70 uppercase tracking-widest">Curated by Shalaka</span>
               </div>
             </div>
             <button onClick={() => setIsOpen(false)} className="hover:bg-white/20 p-2 rounded-xl transition-colors" aria-label="Close assistant">
@@ -127,7 +127,7 @@ const AIAssistant: React.FC = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                placeholder="Ask about our apps..."
+                placeholder="Ask about Shalaka's apps..."
                 className="flex-1 bg-pink-50/50 border border-pink-100 rounded-2xl px-5 py-3 text-sm font-medium focus:outline-none focus:ring-4 focus:ring-pink-500/10 focus:border-pink-500 transition-all placeholder:text-pink-300"
               />
               <button 

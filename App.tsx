@@ -32,11 +32,13 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-orange-500 rounded-xl flex items-center justify-center text-white font-black text-lg shadow-xl shadow-pink-200">S.</div>
-            <span className="font-extrabold text-slate-800 text-lg tracking-tight">Shalaka.io</span>
+            <div>
+              <span className="font-extrabold text-slate-800 text-lg tracking-tight block leading-none">Shalaka.io</span>
+              <span className="text-[9px] font-bold text-pink-500 uppercase tracking-[0.15em] block mt-1">By Shalaka Kashikar</span>
+            </div>
           </div>
           <nav className="hidden md:flex gap-8">
-            <a href="#" className="text-xs font-black uppercase tracking-widest text-pink-600">Explore</a>
-            <a href="https://github.com/shalakakashikar-sudo" target="_blank" className="text-xs font-black uppercase tracking-widest text-slate-400 hover:text-pink-500 transition-colors">Github</a>
+            <a href="#" className="text-xs font-black uppercase tracking-widest text-pink-600">Explore Apps</a>
           </nav>
         </div>
       </header>
@@ -44,13 +46,13 @@ const App: React.FC = () => {
       <section className="pt-24 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white shadow-xl shadow-pink-50 border border-pink-50 text-[10px] font-black text-pink-500 mb-8 tracking-[0.2em] uppercase">
-            Elevating Educational Experiences
+            Curated by Shalaka Kashikar
           </div>
           <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black text-slate-900 serif leading-tight mb-8">
             The Digital <br/><span className="italic text-gradient">Linguistic Hub.</span>
           </h1>
           <p className="text-lg sm:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto font-medium">
-            A curated suite of interactive tools designed to bridge the gap between complex grammar and engaging play.
+            An elite collection of interactive tools designed by Shalaka Kashikar to bridge the gap between complex grammar and engaging play.
           </p>
         </div>
       </section>
@@ -121,19 +123,21 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
                 <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center text-white font-black text-lg">S.</div>
-                    <span className="font-black text-xl text-slate-800 tracking-tighter">Shalaka.io</span>
-                </div>
-                <div className="flex gap-8">
-                  <a href="#" className="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-pink-500 transition-colors">Privacy</a>
-                  <a href="#" className="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-pink-500 transition-colors">Terms</a>
-                  <a href="#" className="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-pink-500 transition-colors">Contact</a>
+                    <div className="w-12 h-12 bg-slate-900 rounded-2xl flex items-center justify-center text-white font-black text-xl shadow-xl shadow-slate-200">S.K.</div>
+                    <div>
+                      <span className="font-black text-2xl text-slate-800 tracking-tighter block leading-none">Shalaka Kashikar</span>
+                      <span className="text-[10px] font-bold text-pink-400 uppercase tracking-widest block mt-1">Creator & Developer</span>
+                    </div>
                 </div>
             </div>
-            <div className="text-center md:text-left pt-10 border-t border-pink-50">
-                <p className="text-[10px] text-slate-300 font-black uppercase tracking-[0.3em]">
-                  © {new Date().getFullYear()} Shalaka.io • Engineered by Shalaka Kashikar
+            <div className="text-center md:text-left pt-10 border-t border-pink-50 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.3em]">
+                  © {new Date().getFullYear()} Shalaka.io • Developed and Designed by Shalaka Kashikar
                 </p>
+                <div className="flex items-center gap-2">
+                   <div className="w-1.5 h-1.5 rounded-full bg-green-400"></div>
+                   <span className="text-[9px] font-black text-slate-300 uppercase tracking-widest">Digital Hub v2.0 Active</span>
+                </div>
             </div>
         </div>
       </footer>
