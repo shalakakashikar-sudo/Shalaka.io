@@ -8,6 +8,16 @@ import { AcademicApp, Category } from './types.ts';
 
 export const ACADEMIC_APPS: AcademicApp[] = [
   {
+    id: 'flip-tag',
+    title: 'Flip Tag',
+    description: 'Master the art of question tags through interactive flipping challenges and grammatical practice sessions.',
+    url: 'https://flip-tag.vercel.app/',
+    category: Category.GRAMMAR,
+    icon: '🔄',
+    tags: ['Grammar', 'Tags'],
+    isFeatured: true
+  },
+  {
     id: 'modowl',
     title: 'Modowl',
     description: 'Master English modal verbs—can, could, may, might, and more—through interactive grammar exercises and owl-themed challenges.',
