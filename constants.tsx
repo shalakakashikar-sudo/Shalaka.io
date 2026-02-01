@@ -8,6 +8,16 @@ import { AcademicApp, Category } from './types.ts';
 
 export const ACADEMIC_APPS: AcademicApp[] = [
   {
+    id: 'art-iculate',
+    title: 'Articulate',
+    description: 'Explore educational comics and specialized learning materials that simplify academic topics through visual storytelling and artistic expression.',
+    url: 'https://art-iculate.vercel.app/',
+    category: Category.LINGUISTICS,
+    icon: '🎨',
+    tags: ['Comics', 'Visuals'],
+    isFeatured: true
+  },
+  {
     id: 'flip-tag',
     title: 'Flip Tag',
     description: 'Master the art of question tags through interactive flipping challenges and grammatical practice sessions.',
