@@ -144,5 +144,14 @@ export const ACADEMIC_APPS: AcademicApp[] = [
     category: Category.GRAMMAR,
     icon: '🏃',
     tags: ['Verbs']
+  },
+  {
+    id: 'vocab-flashcards',
+    title: 'Vocab Flashcards',
+    description: 'Enhance your academic vocabulary with interactive flashcards designed for quick learning and long-term retention.',
+    url: 'https://vocabflashcards-svm-sk.tiiny.site/',
+    category: Category.TOOLS,
+    icon: '🗂️',
+    tags: ['Vocabulary', 'Flashcards']
   }
 ];
