@@ -1,7 +1,6 @@
 
 import React, { useState, useMemo } from 'react';
 import ProjectCard from './components/ProjectCard.tsx';
-import AIAssistant from './components/AIAssistant.tsx';
 import { ACADEMIC_APPS } from './constants.tsx';
 import { Category } from './types.ts';
 
@@ -31,15 +30,12 @@ const App: React.FC = () => {
       <header className="sticky top-0 z-40 glass border-b border-pink-100/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-orange-500 rounded-xl flex items-center justify-center text-white font-black text-lg shadow-xl shadow-pink-200">S.</div>
+            <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-orange-500 rounded-xl flex items-center justify-center text-white font-black text-lg shadow-xl shadow-pink-200">S..</div>
             <div>
               <span className="font-extrabold text-slate-800 text-lg tracking-tight block leading-none">Shalaka.io</span>
               <span className="text-[9px] font-bold text-pink-500 uppercase tracking-[0.15em] block mt-1">By Shalaka Kashikar</span>
             </div>
           </div>
-          <nav className="hidden md:flex gap-8">
-            <a href="#" className="text-xs font-black uppercase tracking-widest text-pink-600">Explore Apps</a>
-          </nav>
         </div>
       </header>
 
@@ -117,8 +113,6 @@ const App: React.FC = () => {
         )}
       </main>
 
-      <AIAssistant />
-
       <footer className="bg-white border-t border-pink-50 pt-20 pb-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
@@ -134,10 +128,6 @@ const App: React.FC = () => {
                 <p className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.3em]">
                   © {new Date().getFullYear()} Shalaka.io • Developed and Designed by Shalaka Kashikar
                 </p>
-                <div className="flex items-center gap-2">
-                   <div className="w-1.5 h-1.5 rounded-full bg-green-400"></div>
-                   <span className="text-[9px] font-black text-slate-300 uppercase tracking-widest">Digital Hub v2.0 Active</span>
-                </div>
             </div>
         </div>
       </footer>
