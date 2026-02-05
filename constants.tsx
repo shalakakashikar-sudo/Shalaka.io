@@ -8,14 +8,23 @@ import { AcademicApp, Category } from './types.ts';
 
 export const ACADEMIC_APPS: AcademicApp[] = [
   {
+    id: 're-post',
+    title: 'Re-Post',
+    description: 'Master direct and indirect speech with Waffle the post-hamster! Journey through interactive lessons and reporting challenges in this charming linguistic adventure.',
+    url: 'https://re-post.vercel.app/',
+    category: Category.GRAMMAR,
+    icon: '🐹',
+    tags: ['Speech', 'Grammar'],
+    isFeatured: true
+  },
+  {
     id: 'art-iculate',
     title: 'Articulate',
     description: 'Explore educational comics and specialized learning materials that simplify academic topics through visual storytelling and artistic expression.',
     url: 'https://art-iculate.vercel.app/',
     category: Category.LINGUISTICS,
     icon: '🎨',
-    tags: ['Comics', 'Visuals'],
-    isFeatured: true
+    tags: ['Comics', 'Visuals']
   },
   {
     id: 'flip-tag',
@@ -24,8 +33,7 @@ export const ACADEMIC_APPS: AcademicApp[] = [
     url: 'https://flip-tag.vercel.app/',
     category: Category.GRAMMAR,
     icon: '🔄',
-    tags: ['Grammar', 'Tags'],
-    isFeatured: true
+    tags: ['Grammar', 'Tags']
   },
   {
     id: 'modowl',
@@ -34,8 +42,7 @@ export const ACADEMIC_APPS: AcademicApp[] = [
     url: 'https://modowl.vercel.app/',
     category: Category.GRAMMAR,
     icon: '🦉',
-    tags: ['Grammar', 'Modals'],
-    isFeatured: true
+    tags: ['Grammar', 'Modals']
   },
   {
     id: 'determiner-den',
