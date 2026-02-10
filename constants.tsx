@@ -8,6 +8,16 @@ import { AcademicApp, Category } from './types.ts';
 
 export const ACADEMIC_APPS: AcademicApp[] = [
   {
+    id: 'inkly',
+    title: 'Inkly',
+    description: 'Master the craft of article writing with Inkly. This interactive tool guides students through the structure, tone, and techniques of professional journalism and informative writing.',
+    url: 'https://inkly-article-writing.vercel.app/',
+    category: Category.LINGUISTICS,
+    icon: '🪶',
+    tags: ['Writing', 'Articles'],
+    isFeatured: true
+  },
+  {
     id: 're-post',
     title: 'Re-Post',
     description: 'Master direct and indirect speech with Waffle the post-hamster! Journey through interactive lessons and reporting challenges in this charming linguistic adventure.',
