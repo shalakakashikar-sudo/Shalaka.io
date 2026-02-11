@@ -9,7 +9,7 @@ export const ACADEMIC_APPS: AcademicApp[] = [
   {
     id: 'the-baa-ckground',
     title: 'The Baa-ckground',
-    description: 'Master prepositions with Shadow the sheep! Solve visual spatial challenges to perfect your grammar.',
+    description: 'Master prepositions with Aayu the sheep! Solve visual spatial challenges to perfect your grammar.',
     url: 'https://the-baa-ckground.vercel.app/',
     category: Category.GRAMMAR,
     icon: '🐑',
