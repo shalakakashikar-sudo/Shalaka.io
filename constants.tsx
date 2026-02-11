@@ -1,4 +1,3 @@
-
 import { AcademicApp, Category } from './types.ts';
 
 /**
@@ -8,9 +7,19 @@ import { AcademicApp, Category } from './types.ts';
 
 export const ACADEMIC_APPS: AcademicApp[] = [
   {
+    id: 'the-baa-ckground',
+    title: 'The Baa-ckground',
+    description: 'Master prepositions with Shadow the sheep! Solve visual spatial challenges to perfect your grammar.',
+    url: 'https://the-baa-ckground.vercel.app/',
+    category: Category.GRAMMAR,
+    icon: '🐑',
+    tags: ['Prepositions', 'Grammar'],
+    isFeatured: true
+  },
+  {
     id: 'inkly',
     title: 'Inkly',
-    description: 'Master the craft of article writing with Inkly. This interactive tool guides students through the structure, tone, and techniques of professional journalism and informative writing.',
+    description: 'Learn the craft of article writing. Master structure, tone, and professional journalistic techniques.',
     url: 'https://inkly-article-writing.vercel.app/',
     category: Category.LINGUISTICS,
     icon: '🪶',
@@ -20,7 +29,7 @@ export const ACADEMIC_APPS: AcademicApp[] = [
   {
     id: 're-post',
     title: 'Re-Post',
-    description: 'Master direct and indirect speech with Waffle the post-hamster! Journey through interactive lessons and reporting challenges in this charming linguistic adventure.',
+    description: 'Journey with Waffle the post-hamster to master direct and indirect speech in this linguistic adventure.',
     url: 'https://re-post.vercel.app/',
     category: Category.GRAMMAR,
     icon: '🐹',
@@ -30,7 +39,7 @@ export const ACADEMIC_APPS: AcademicApp[] = [
   {
     id: 'art-iculate',
     title: 'Articulate',
-    description: 'Explore educational comics and specialized learning materials that simplify academic topics through visual storytelling and artistic expression.',
+    description: 'Educational comics and visual materials that simplify complex academic topics through storytelling.',
     url: 'https://art-iculate.vercel.app/',
     category: Category.LINGUISTICS,
     icon: '🎨',
@@ -39,7 +48,7 @@ export const ACADEMIC_APPS: AcademicApp[] = [
   {
     id: 'flip-tag',
     title: 'Flip Tag',
-    description: 'Master the art of question tags through interactive flipping challenges and grammatical practice sessions.',
+    description: 'Master question tags through interactive flipping challenges and rapid grammatical practice.',
     url: 'https://flip-tag.vercel.app/',
     category: Category.GRAMMAR,
     icon: '🔄',
@@ -48,7 +57,7 @@ export const ACADEMIC_APPS: AcademicApp[] = [
   {
     id: 'modowl',
     title: 'Modowl',
-    description: 'Master English modal verbs—can, could, may, might, and more—through interactive grammar exercises and owl-themed challenges.',
+    description: 'Master English modal verbs—can, could, may, and more—with interactive owl-themed challenges.',
     url: 'https://modowl.vercel.app/',
     category: Category.GRAMMAR,
     icon: '🦉',
@@ -57,7 +66,7 @@ export const ACADEMIC_APPS: AcademicApp[] = [
   {
     id: 'determiner-den',
     title: 'Determiner Den',
-    description: 'Master the nuances of determiners, articles, and quantifiers through interactive challenges and linguistic quests.',
+    description: 'Conquer the nuances of determiners, articles, and quantifiers through interactive linguistic quests.',
     url: 'https://determiner-den.vercel.app/',
     category: Category.GRAMMAR,
     icon: '🏰',
@@ -66,7 +75,7 @@ export const ACADEMIC_APPS: AcademicApp[] = [
   {
     id: 'gnome-smash',
     title: 'Gnome Smash',
-    description: 'An engaging game-based tool designed to sharpen reflexes and improve cognitive focus through interactive play.',
+    description: 'A fast-paced game designed to sharpen reflexes and improve focus through interactive play.',
     url: 'https://gnome-smash.vercel.app',
     category: Category.GAMES,
     icon: '🍄',
@@ -93,7 +102,7 @@ export const ACADEMIC_APPS: AcademicApp[] = [
   {
     id: 'sva-mastery',
     title: 'Subject-Verb Agreement',
-    description: 'Interactive exercises focused on the foundational rules of grammatical agreement.',
+    description: 'Interactive exercises focused on foundational rules of subject-verb grammatical agreement.',
     url: 'https://shalakakashikar-sudo.github.io/SVA/',
     category: Category.GRAMMAR,
     icon: '✍️',
@@ -111,7 +120,7 @@ export const ACADEMIC_APPS: AcademicApp[] = [
   {
     id: 'twistopia',
     title: 'Twistopia',
-    description: 'Improve pronunciation and speech clarity with a collection of challenging tongue twisters.',
+    description: 'Improve pronunciation and speech clarity with a challenging collection of tongue twisters.',
     url: 'https://twistopia.vercel.app/',
     category: Category.LINGUISTICS,
     icon: '🌀',
@@ -129,7 +138,7 @@ export const ACADEMIC_APPS: AcademicApp[] = [
   {
     id: 'sentence-safari',
     title: 'Sentence Safari',
-    description: 'Sharpen syntax skills by unscrambling jumbled sentences in a fun environment.',
+    description: 'Sharpen syntax skills by unscrambling jumbled sentences in a fun, wild environment.',
     url: 'https://sentence-safari.vercel.app/',
     category: Category.GAMES,
     icon: '🦁',
@@ -138,7 +147,7 @@ export const ACADEMIC_APPS: AcademicApp[] = [
   {
     id: 'spanish-playground',
     title: 'Spanish Playground',
-    description: 'Interactive tools for students looking to practice and improve Spanish proficiency.',
+    description: 'Interactive tools and exercises for students looking to improve Spanish language proficiency.',
     url: 'https://spanish-playground.vercel.app/',
     category: Category.LINGUISTICS,
     icon: '🇪🇸',
@@ -147,7 +156,7 @@ export const ACADEMIC_APPS: AcademicApp[] = [
   {
     id: 'litmania',
     title: 'Litmania',
-    description: 'Portal for mastering literary devices, poetic techniques, and text analysis.',
+    description: 'A portal for mastering literary devices, poetic techniques, and deep text analysis.',
     url: 'https://litmania.vercel.app/',
     category: Category.LINGUISTICS,
     icon: '📜',
@@ -156,7 +165,7 @@ export const ACADEMIC_APPS: AcademicApp[] = [
   {
     id: 'verb-academy',
     title: 'Verb Academy',
-    description: 'Master complexities of verb forms, conjugations, and tenses through practice.',
+    description: 'Master the complexities of verb forms, conjugations, and tenses through focused practice.',
     url: 'https://verb-academy.vercel.app/',
     category: Category.GRAMMAR,
     icon: '🏃',
@@ -165,7 +174,7 @@ export const ACADEMIC_APPS: AcademicApp[] = [
   {
     id: 'vocab-flashcards',
     title: 'Vocab Flashcards',
-    description: 'Enhance your academic vocabulary with interactive flashcards designed for quick learning and long-term retention.',
+    description: 'Enhance academic vocabulary with interactive flashcards designed for rapid learning.',
     url: 'https://vocabflashcards-svm-sk.tiiny.site/',
     category: Category.TOOLS,
     icon: '🗂️',
