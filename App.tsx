@@ -1,6 +1,7 @@
 
 import React, { useState, useMemo } from 'react';
 import ProjectCard from './components/ProjectCard.tsx';
+import AIAssistant from './components/AIAssistant.tsx';
 import { ACADEMIC_APPS } from './constants.tsx';
 import { Category } from './types.ts';
 
@@ -131,6 +132,9 @@ const App: React.FC = () => {
             </div>
         </div>
       </footer>
+
+      {/* Integrated the fixed AI Assistant */}
+      <AIAssistant />
     </div>
   );
 };

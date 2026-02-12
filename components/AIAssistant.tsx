@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { GoogleGenAI } from "@google/genai";
 import { ChatMessage } from '../types.ts';
 
+// Added React import to fix namespace error for React.FC
 const AIAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
@@ -53,6 +54,7 @@ const AIAssistant: React.FC = () => {
     setIsLoading(true);
 
     try {
+      // Create a new instance right before generating content to ensure process.env.API_KEY is fresh
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       const history = messages.slice(1).map(m => ({ 
         role: m.role, 
@@ -63,7 +65,7 @@ const AIAssistant: React.FC = () => {
         model: 'gemini-3-flash-preview',
         contents: [...history, { role: 'user', parts: [{ text: userMsg }] }],
         config: {
-          systemInstruction: "You are a helpful academic assistant for Shalaka.io, a hub of interactive educational apps designed and developed by Shalaka Kashikar. You help users navigate apps like Re-Post (featuring Waffle the post-hamster), Articulate, Flip Tag, Modowl, Determiner Den, Gnome Smash, SmarTest, English Playground, SVA Mastery, Crowsword, Twistopia, Conditionals, Sentence Safari, Spanish Playground, Litmania, and Verb Academy. Always refer to Shalaka Kashikar as the visionary and creator of these tools. Be concise, encouraging, and focused.",
+          systemInstruction: "You are a helpful academic assistant for Shalaka.io, a hub of interactive educational apps designed and developed by Shalaka Kashikar. You help users navigate apps like Bamboozled (featuring Shoot the Panda), Re-Post (featuring Waffle the post-hamster), Articulate, Flip Tag, Modowl, Determiner Den, Gnome Smash, SmarTest, English Playground, SVA Mastery, Crowsword, Twistopia, Conditionals, Sentence Safari, Spanish Playground, Litmania, and Verb Academy. Always refer to Shalaka Kashikar as the visionary and creator of these tools. Be concise, encouraging, and focused.",
         },
       });
 
@@ -90,6 +92,7 @@ const AIAssistant: React.FC = () => {
               </div>
             </div>
             <button onClick={() => setIsOpen(false)} className="hover:bg-white/20 p-2 rounded-xl transition-colors" aria-label="Close assistant">
+              {/* Corrected SVG namespace typo from center to svg */}
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>

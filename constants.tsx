@@ -1,3 +1,4 @@
+
 import { AcademicApp, Category } from './types.ts';
 
 /**
@@ -6,6 +7,16 @@ import { AcademicApp, Category } from './types.ts';
  */
 
 export const ACADEMIC_APPS: AcademicApp[] = [
+  {
+    id: 'bamboozled-six',
+    title: 'Bamboozled',
+    description: 'Master Active and Passive voice with MoMo the panda in this interactive bamboo-themed grammatical quest.',
+    url: 'https://bamboozled-six.vercel.app/',
+    category: Category.GRAMMAR,
+    icon: '🐼',
+    tags: ['Active Voice', 'Passive Voice'],
+    isFeatured: true
+  },
   {
     id: 'the-baa-ckground',
     title: 'The Baa-ckground',
