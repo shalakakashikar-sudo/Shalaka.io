@@ -1,7 +1,5 @@
-
 import React, { useState, useMemo } from 'react';
 import ProjectCard from './components/ProjectCard.tsx';
-import AIAssistant from './components/AIAssistant.tsx';
 import { ACADEMIC_APPS } from './constants.tsx';
 import { Category } from './types.ts';
 
@@ -132,9 +130,6 @@ const App: React.FC = () => {
             </div>
         </div>
       </footer>
-
-      {/* Added AIAssistant component to the application layout */}
-      <AIAssistant />
     </div>
   );
 };

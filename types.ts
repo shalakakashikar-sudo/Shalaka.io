@@ -1,4 +1,3 @@
-
 export enum Category {
   GRAMMAR = 'Grammar',
   GAMES = 'Games',
@@ -17,7 +16,7 @@ export interface AcademicApp {
   isFeatured?: boolean;
 }
 
-// Fixed missing ChatMessage type required for the AI Assistant state
+// Added ChatMessage interface to define the structure of the AI conversation history
 export interface ChatMessage {
   role: 'user' | 'model';
   text: string;
