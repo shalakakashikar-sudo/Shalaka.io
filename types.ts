@@ -17,9 +17,7 @@ export interface AcademicApp {
   isFeatured?: boolean;
 }
 
-/**
- * Interface representing a message in the AI assistant conversation.
- */
+// Fixed missing ChatMessage type required for the AI Assistant state
 export interface ChatMessage {
   role: 'user' | 'model';
   text: string;

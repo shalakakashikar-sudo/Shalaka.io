@@ -133,7 +133,7 @@ const App: React.FC = () => {
         </div>
       </footer>
 
-      {/* Integrated the fixed AI Assistant */}
+      {/* Added AIAssistant component to the application layout */}
       <AIAssistant />
     </div>
   );

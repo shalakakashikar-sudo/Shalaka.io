@@ -8,6 +8,16 @@ import { AcademicApp, Category } from './types.ts';
 
 export const ACADEMIC_APPS: AcademicApp[] = [
   {
+    id: 'cupcake-clatter',
+    title: 'Cupcake Clatter',
+    description: 'Explore the delightful world of onomatopoeic sounds with Nan-Ding in this strawberry cupcake-themed linguistic guide.',
+    url: 'https://cupcake-clatter.vercel.app/',
+    category: Category.LINGUISTICS,
+    icon: '🧁',
+    tags: ['Onomatopoeia', 'Linguistics'],
+    isFeatured: true
+  },
+  {
     id: 'bamboozled-six',
     title: 'Bamboozled',
     description: 'Master Active and Passive voice with MoMo the panda in this interactive bamboo-themed grammatical quest.',
