@@ -8,6 +8,16 @@ import { AcademicApp, Category } from './types.ts';
 
 export const ACADEMIC_APPS: AcademicApp[] = [
   {
+    id: 'the-milky-way',
+    title: 'The Milky Way',
+    description: 'Travel through the cosmos with Dr. Moo to master the intricacies of English tenses in this stellar grammatical journey.',
+    url: 'https://the-milky-way.vercel.app/',
+    category: Category.GRAMMAR,
+    icon: '🐄',
+    tags: ['Tenses', 'Grammar'],
+    isFeatured: true
+  },
+  {
     id: 'cupcake-clatter',
     title: 'Cupcake Clatter',
     description: 'Explore the delightful world of onomatopoeic sounds with Nan-Ding in this strawberry cupcake-themed linguistic guide.',
@@ -15,7 +25,6 @@ export const ACADEMIC_APPS: AcademicApp[] = [
     category: Category.LINGUISTICS,
     icon: '🧁',
     tags: ['Onomatopoeia', 'Linguistics'],
-    isFeatured: true
   },
   {
     id: 'bamboozled-six',
@@ -25,7 +34,6 @@ export const ACADEMIC_APPS: AcademicApp[] = [
     category: Category.GRAMMAR,
     icon: '🐼',
     tags: ['Active Voice', 'Passive Voice'],
-    isFeatured: true
   },
   {
     id: 'the-baa-ckground',
@@ -35,7 +43,6 @@ export const ACADEMIC_APPS: AcademicApp[] = [
     category: Category.GRAMMAR,
     icon: '🐑',
     tags: ['Prepositions', 'Grammar'],
-    isFeatured: true
   },
   {
     id: 'inkly',
@@ -45,7 +52,6 @@ export const ACADEMIC_APPS: AcademicApp[] = [
     category: Category.LINGUISTICS,
     icon: '🪶',
     tags: ['Writing', 'Articles'],
-    isFeatured: true
   },
   {
     id: 're-post',
@@ -55,7 +61,6 @@ export const ACADEMIC_APPS: AcademicApp[] = [
     category: Category.GRAMMAR,
     icon: '🐹',
     tags: ['Speech', 'Grammar'],
-    isFeatured: true
   },
   {
     id: 'art-iculate',
