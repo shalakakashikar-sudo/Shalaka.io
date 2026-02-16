@@ -8,6 +8,16 @@ import { AcademicApp, Category } from './types.ts';
 
 export const ACADEMIC_APPS: AcademicApp[] = [
   {
+    id: 'unwaffled',
+    title: 'Unwaffled',
+    description: 'Master Notice Writing with Sir Crisp the Waffle. Craft clear, structured notices for all your academic needs.',
+    url: 'https://unwaffled.vercel.app/',
+    category: Category.LINGUISTICS,
+    icon: '🧇',
+    tags: ['Notice Writing', 'Writing'],
+    isFeatured: true
+  },
+  {
     id: 'the-milky-way',
     title: 'The Milky Way',
     description: 'Travel through the cosmos with Dr. Moo to master the intricacies of English tenses in this stellar grammatical journey.',
