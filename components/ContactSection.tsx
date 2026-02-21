@@ -13,7 +13,7 @@ const ContactSection: React.FC = () => {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch('https://formspree.io/f/shalakakashikar@gmail.com', {
+      const response = await fetch('https://formspree.io/shalakakashikar@gmail.com', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
@@ -84,6 +84,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <h3 className="text-3xl font-black text-slate-900 mb-4">Message Sent!</h3>
                 <p className="text-slate-500 font-medium text-lg">Thank you for reaching out. I'll get back to you as soon as possible.</p>
+                <p className="text-slate-400 text-sm mt-4 italic">Note: Please check your <b>Spam</b> folder if you don't see an email from Formspree.</p>
                 <button 
                   onClick={() => setStatus('idle')}
                   className="mt-10 text-pink-500 font-black text-xs uppercase tracking-[0.2em] hover:underline"
@@ -92,7 +93,7 @@ const ContactSection: React.FC = () => {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-8">
+              <form name="contact-form" onSubmit={handleSubmit} className="space-y-8">
                 {status === 'error' && (
                   <div className="bg-red-50 text-red-600 p-4 rounded-2xl text-xs font-bold uppercase tracking-widest border border-red-100">
                     Something went wrong. Please try again or email me directly.
