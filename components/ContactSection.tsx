@@ -10,12 +10,14 @@ const ContactSection: React.FC = () => {
     
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
 
     try {
       const response = await fetch('https://formspree.io/f/shalakakashikar@gmail.com', {
         method: 'POST',
-        body: formData,
+        body: JSON.stringify(data),
         headers: {
+          'Content-Type': 'application/json',
           'Accept': 'application/json'
         }
       });
@@ -24,9 +26,12 @@ const ContactSection: React.FC = () => {
         setStatus('success');
         form.reset();
       } else {
+        const result = await response.json();
+        console.error('Formspree error:', result);
         setStatus('error');
       }
     } catch (error) {
+      console.error('Submission error:', error);
       setStatus('error');
     }
   };
