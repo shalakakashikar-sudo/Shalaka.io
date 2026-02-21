@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import ProjectCard from './components/ProjectCard.tsx';
+import ContactSection from './components/ContactSection.tsx';
 import { ACADEMIC_APPS } from './constants.tsx';
 import { Category } from './types.ts';
 
@@ -34,6 +35,21 @@ const App: React.FC = () => {
               <span className="font-extrabold text-slate-800 text-lg tracking-tight block leading-none">Shalaka.io</span>
               <span className="text-[9px] font-bold text-pink-500 uppercase tracking-[0.15em] block mt-1">By Shalaka Kashikar</span>
             </div>
+          </div>
+
+          <div className="flex items-center gap-6">
+            <a 
+              href="#contact" 
+              className="hidden sm:block text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 hover:text-pink-500 transition-colors"
+            >
+              Contact
+            </a>
+            <a 
+              href="#contact"
+              className="bg-slate-900 text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-xl shadow-slate-200 hover:scale-105 transition-all"
+            >
+              Feedback & Questions
+            </a>
           </div>
         </div>
       </header>
@@ -111,6 +127,8 @@ const App: React.FC = () => {
           </div>
         )}
       </main>
+
+      <ContactSection />
 
       <footer className="bg-white border-t border-pink-50 pt-20 pb-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

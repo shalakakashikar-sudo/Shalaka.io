@@ -8,6 +8,16 @@ import { AcademicApp, Category } from './types.ts';
 
 export const ACADEMIC_APPS: AcademicApp[] = [
   {
+    id: 'repor-tea',
+    title: 'Repor-tea',
+    description: 'Master the art of report writing with a refreshing twist. Learn structure, formal tone, and professional reporting.',
+    url: 'https://repor-tea.vercel.app/',
+    category: Category.LINGUISTICS,
+    icon: '🍵',
+    tags: ['New', 'Report Writing', 'Writing'],
+    isFeatured: true
+  },
+  {
     id: 'unwaffled',
     title: 'Unwaffled',
     description: 'Master Notice Writing with Sir Crisp the Waffle. Craft clear, structured notices for all your academic needs.',
