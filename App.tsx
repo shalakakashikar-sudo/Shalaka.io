@@ -39,16 +39,10 @@ const App: React.FC = () => {
 
           <div className="flex items-center gap-6">
             <a 
-              href="#contact" 
-              className="hidden sm:block text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 hover:text-pink-500 transition-colors"
-            >
-              Contact
-            </a>
-            <a 
               href="#contact"
-              className="bg-slate-900 text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-xl shadow-slate-200 hover:scale-105 transition-all"
+              className="bg-slate-900 text-white px-7 py-3.5 rounded-2xl text-[10px] font-black uppercase tracking-[0.15em] shadow-xl shadow-slate-200 hover:scale-105 transition-all"
             >
-              Feedback & Questions
+              Have a question or feedback?
             </a>
           </div>
         </div>
