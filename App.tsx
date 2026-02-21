@@ -30,7 +30,7 @@ const App: React.FC = () => {
       <header className="sticky top-0 z-40 glass border-b border-pink-100/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-orange-500 rounded-xl flex items-center justify-center text-white font-black text-lg shadow-xl shadow-pink-200">S..</div>
+            <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-orange-500 rounded-xl flex items-center justify-center text-white font-black text-lg shadow-xl shadow-pink-200">S.K.</div>
             <div>
               <span className="font-extrabold text-slate-800 text-lg tracking-tight block leading-none">Shalaka.io</span>
               <span className="text-[9px] font-bold text-pink-500 uppercase tracking-[0.15em] block mt-1">By Shalaka Kashikar</span>
@@ -51,7 +51,7 @@ const App: React.FC = () => {
               href="#contact"
               className="bg-slate-900 text-white px-7 py-3.5 rounded-2xl text-[10px] font-black uppercase tracking-[0.15em] shadow-xl shadow-slate-200 hover:scale-105 transition-all"
             >
-              Have a question or feedback?
+              Contact Me
             </a>
           </div>
         </div>
