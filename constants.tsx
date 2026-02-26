@@ -8,6 +8,16 @@ import { AcademicApp, Category } from './types.ts';
 
 export const ACADEMIC_APPS: AcademicApp[] = [
   {
+    id: 'sweet-scoops-academy',
+    title: 'Sweet Scoops Academy',
+    description: 'Master CUET English preparation with Pops the mascot. Your ultimate academy for sweet success in academic English.',
+    url: 'https://cuet-english.vercel.app/',
+    category: Category.LINGUISTICS,
+    icon: '🍦',
+    tags: ['CUET', 'English', 'Preparation'],
+    isFeatured: true
+  },
+  {
     id: 'repor-tea',
     title: 'Repor-tea',
     description: 'Master the art of report writing with a refreshing twist. Learn structure, formal tone, and professional reporting.',
